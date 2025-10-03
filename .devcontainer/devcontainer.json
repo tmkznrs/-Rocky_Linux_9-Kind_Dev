@@ -1,0 +1,19 @@
+{
+  "name": "Rocky Linux 9 & Kind Dev",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "runArgs": [
+    "--privileged",
+    "--network=host"
+  ],
+  "mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
+//  "postCreateCommand": "kind create cluster --name dev-cluster && kubectl cluster-info",
+  "remoteUser": "vscode"
+}
